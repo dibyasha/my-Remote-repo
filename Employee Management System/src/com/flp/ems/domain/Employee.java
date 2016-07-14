@@ -29,8 +29,8 @@ public String getAdd(){
 
 public void setdateofbirth(String j_dateofbirth){
 
-	this.dateofbirth= dateofbirth;
-
+	this.dateofbirth=j_dateofbirth;
+}
 public String getdateofbirth(){
 	return dateofbirth;
 }
@@ -42,18 +42,17 @@ public String getEmail_id(){
 	return email_id;
 }
 		
-private String getJ_date() {
-	this.j_date=j_date;
+public String getJ_date() {
+	return this.j_date;
 	
 	
 }
 public void setName(String name) {
-	// TODO Auto-generated method stub
 	this.Name=name;
 }
 
 public void setJ_date(String j_date2) {
-	
+	this.j_date=j_date2;
 	
 }
 
