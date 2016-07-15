@@ -2,7 +2,7 @@ package com.flp.ems.domain;
 
 public class Employee {
 	private int emp_id=0;
-	private String Phone_no;
+	private String phone_no;
 	private String Name;
 	private String Add;
 	private String j_date;
@@ -14,10 +14,10 @@ public class Employee {
 	}
 	
 	public String getPhone_no(){
-	return Phone_no;
+	return phone_no;
 }
 public void setPhone_no(String l){
-	Phone_no=l;
+	phone_no=l;
 }
 public void setAdd(String add)
 {
