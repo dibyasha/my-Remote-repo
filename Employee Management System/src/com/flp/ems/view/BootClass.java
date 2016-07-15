@@ -21,16 +21,19 @@ public class BootClass {
 	{
 	case 0:
 	obj.AddEmployee();
-//	case 1:
-//		obj.ModifyEmployee();
-//		break;
-//	case 2:
-//		obj.RemoveEmployee();
-//		break;
-//	case 3:
-//		obj.SearchEmployee();
-//	case 4 :
-//		obj.getAllEmployee();
+	break;
+	case 1:
+		obj.ModifyEmplyee();
+		break;
+	case 2:
+		obj.RemoveEmployee();
+		break;
+	case 3:
+		obj.SearchEmployee();
+		break;
+	case 4 :
+		obj.getAllEmployee();
+		break;
 	}
 }
 }
