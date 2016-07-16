@@ -21,7 +21,7 @@ public class Validate {
 		    return matcher.find();
 
 		}
-		public boolean ValidatePhoneNumber(String ph) {
+		public static boolean PhoneNumber(String argv) {
 
 		        String phoneNumber = "1-(80..2)-321-0361";
 		        System.out.println(phoneNumber.length());
@@ -31,6 +31,7 @@ public class Validate {
 
 		        if (matcher.matches()) {
 		            System.out.println("Phone Number Valid");
+		            return true;
 		        } else {
 		            System.out.println("Phone Number must be in the form XXX-XXXXXXX");
 		        }

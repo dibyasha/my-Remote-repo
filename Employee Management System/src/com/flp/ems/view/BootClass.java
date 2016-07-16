@@ -2,6 +2,7 @@ package com.flp.ems.view;
 import java.util.Scanner;
 
 public class BootClass {
+	private Scanner sc;
 	public static void main(String []args)
 
 	{
@@ -15,7 +16,7 @@ public class BootClass {
 	System.out.println("option 03 for RemoveEmployee");
 	System.out.println("option 04 for SearchEmployee");
 	System.out.println("option 05 for getAllEmployee");
-	Scanner sc=new Scanner (System.in);
+	sc = new Scanner (System.in);
 	int i=sc.nextInt();
 	switch(i)
 	{

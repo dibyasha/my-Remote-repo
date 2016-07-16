@@ -14,6 +14,7 @@ public class EmployeeServiceImpl  implements IEmployeeService{
 	private String Name;
 	private String Add;
 	private String email_id;
+	EmployeeDaoImplForList o4=new EmployeeDaoImplForList();
 	
 	
 	
@@ -33,7 +34,8 @@ public class EmployeeServiceImpl  implements IEmployeeService{
 		o2.setJ_date(j_date);
 		o2.setdateofbirth(dateofbirth);
 		EmployeeDaoImplForList E1= new EmployeeDaoImplForList();
-      if (E1.AddEmployee(emp) e.emp_id()) &&	 (validate.valname
+		E1.AddEmployee(o2);
+      
     		  
 E1.AddEmployee(o2);
 		
@@ -61,7 +63,7 @@ E1.AddEmployee(o2);
 
 	@Override
 	public void getAllEmployee() {
-		// TODO Auto-generated method stub
+		o4.getAllEmployee();
 		
 	}
 
