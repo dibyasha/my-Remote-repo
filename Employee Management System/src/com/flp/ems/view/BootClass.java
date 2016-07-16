@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class BootClass {
 	private Scanner sc;
+	UserInteraction obj=new UserInteraction();
 	public static void main(String []args)
 
 	{
@@ -10,7 +11,7 @@ public class BootClass {
 		B.menuSelection();
 	}
 	public void menuSelection(){
-	UserInteraction obj=new UserInteraction();
+
 	System.out.println("option 01 for AddEmployee");
 	System.out.println("option 02 for ModifyEmployee");
 	System.out.println("option 03 for RemoveEmployee");
@@ -20,19 +21,22 @@ public class BootClass {
 	int i=sc.nextInt();
 	switch(i)
 	{
-	case 0:
-	obj.AddEmployee();
-	break;
 	case 1:
-		obj.ModifyEmplyee();
-		break;
+	obj.AddEmployee();
+	this.menuSelection();
+	break;
 	case 2:
-		obj.RemoveEmployee();
+		obj.ModifyEmplyee();
+		this.menuSelection();
 		break;
 	case 3:
-		obj.SearchEmployee();
+		obj.RemoveEmployee();
 		break;
-	case 4 :
+	case 4:
+		obj.SearchEmployee();
+		this.menuSelection();
+		break;
+	case 5 :
 		obj.getAllEmployee();
 		break;
 	}

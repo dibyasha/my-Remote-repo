@@ -23,8 +23,7 @@ public class Validate {
 		}
 		public static boolean PhoneNumber(String argv) {
 
-		        String phoneNumber = "1-(80..2)-321-0361";
-		        System.out.println(phoneNumber.length());
+		        String phoneNumber = "9876543210";
 		        String regex = "^\\+?[0-9. ()-]{10,25}$";
 		        Pattern pattern = Pattern.compile(regex);
 		        Matcher matcher = pattern.matcher(phoneNumber);
@@ -55,7 +54,7 @@ public class Validate {
 		    String regx = "[a-zA-Z]+\\.?";
 		    Pattern pattern = Pattern.compile(regx,Pattern.CASE_INSENSITIVE);
 		    Matcher matcher = pattern.matcher(txt);
-		    return matcher.find();
+		    return matcher.matches();
 
 		}
 }

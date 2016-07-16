@@ -8,6 +8,7 @@ public class Employee {
 	private String j_date;
 	private String dateofbirth;
 	private String email_id;
+	private String kin_id;
 	
 	public String getName(){
 		return Name;
@@ -56,6 +57,13 @@ public void setJ_date(String j_date2) {
 	
 }
 
+public void setKin_id(String kin_id2) {
+	this.kin_id=kin_id;
+	// TODO Auto-generated method stub
+}
 
+public String getkin_id(){
+	return kin_id;
+}
 
 }

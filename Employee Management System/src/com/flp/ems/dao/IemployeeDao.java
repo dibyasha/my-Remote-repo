@@ -5,7 +5,7 @@ public interface IemployeeDao {
 	void  AddEmployee(Employee emp);
 	void  ModifyEmployee();
     void  RemoveEmployee();
-    void  SerachEmployee();
+    void  SerachEmployee(String a);
     void  getAllEmployee();
 
 }
