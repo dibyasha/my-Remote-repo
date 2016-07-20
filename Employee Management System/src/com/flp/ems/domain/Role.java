@@ -1,28 +1,34 @@
 package com.flp.ems.domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Role {
-	private int rol;
-	public Role(){
-		
-			List <String> listStrings= new ArrayList<String>();
-			listStrings.add("1-Software engineer");
-			listStrings.add("2-associate consultant");
-			listStrings.add("3-consultant");
-			listStrings.add("4-senior consultant");
-			System.out.println(listStrings);
-			}
-		
-			public int getRole(){
-				return rol;
-			}
-			public void setRole(int Role)
-			{
-				this.rol=Role;
-			}
-		}
+	private int Role_id;
+	private String RName;
+	private String RDesc;
+	public int getRole_id() {
+		return Role_id;
+	}
+	public void setRole_id(int role_id) {
+		Role_id = role_id;
+	}
+	public String getRName() {
+		return RName;
+	}
+	public void setRName(String rName) {
+		RName = rName;
+	}
+	public String getRDesc() {
+		return RDesc;
+	}
+	public void setRDesc(String rDesc) {
+		RDesc = rDesc;
+	}
+	public Role setRole(Role role)
+	{
+		return role;
+	}
+	@Override
+	public String toString() {
+		return "Role [Role_id=" + Role_id + ", RName=" + RName + ", RDesc=" + RDesc + "]";
+	}
 	
-
-
+}

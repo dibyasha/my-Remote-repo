@@ -1,69 +1,75 @@
 package com.flp.ems.dao;
-import java.util.ArrayList;
-import java.util.List;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+
+import com.flp.ems.domain.Department;
 import com.flp.ems.domain.Employee;
+import com.flp.ems.domain.Role;
+import com.flp.ems.domain.project;
 
 public class EmployeeDaoImplForList implements IemployeeDao{
-	List<Employee> arr= new ArrayList();
-	Employee o6;
-	@Override
-	public void AddEmployee(Employee emp) {
-		o6= emp;
-		arr.add(o6);
-		System.out.println(arr);		
+	List<Employee>employees=new ArrayList<Employee>();
+	List<Department>departments=new ArrayList<Department>();
+	List<project>projects=new ArrayList<project>();
+	List<Role>roles=new ArrayList<Role>();
+ 
+		  public Employee addEmployee( Employee emp)
+	{
+			  
+			  
+		employees.add(emp);
+		departments.add(emp.getDepartment());
+		projects.add(emp.getProject());
+		roles.add(emp.getRole());
+		return emp;
 	}
 
-	@Override
-	public void ModifyEmployee() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void RemoveEmployee() {
-		
-		
-		
-	}
-
-	public void SearchEmployee(String name, String email) {
-		for(Employee emply:arr)
-		{		
-	
-		
-		if(emply.getEmail_id().equals(email)){
-			System.out.println("email  found");
-			System.out.println(emply.toString());
-		}
-		else if(emply.getName().equals(name)) {
-			
-			System.out.println("name  found");
-			System.out.println(emply.toString());
-		}
-		else if(emply.getName().equals(name) && emply.getEmail_id().equals(email)){
-			System.out.println("name and email found");
-			System.out.println(emply.toString());
-		}
-		}
-	}
-
-		
-		
-
-	@Override
-	public void getAllEmployee() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void SerachEmployee(String a) {
-		// TODO Auto-generated method stub
-		
-	}
+		  public void ModifyEmployee(Map empModifiedDetails,int empId,int ch) {
+				Employee emp=SearchEmployee(empId);
+				int index=employees.indexOf(emp);
+				switch(ch)
+				{
+				case 1: employees.get(index).setEmpName((String)empModifiedDetails.get("empName"));
+						break;
+				case 2:employees.get(index).setEmail((String)empModifiedDetails.get("Email"));
+						break;
+				}
+			}
+ 
 
 	
+	public boolean RemoveEmployee(int empId) {
+	
+		for (Employee emp : employees) {
+		
+		      
+		       if (emp.getEmpid() == empId){
+		          employees.remove(emp);
+		          return true;
+		       }
+		 }
+		return false;
+	}
+
+	public Employee SearchEmployee(int empId) 
+	{
+		 for(Employee emp : employees) {
+		        if(emp.getEmpid() == empId)
+		        {
+		        	return emp;
+		        }
+		  }
+		 return null;
+	}
+
+	public List<Employee> getAllEmployee() {
+		if(employees.isEmpty())
+			return null;
+		return employees;
+	}
 
 }
-

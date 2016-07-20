@@ -1,27 +1,47 @@
 package com.flp.ems.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+public class project {
+	private Department department;
+	private String ProName;
+	private int Pro_id;
+	private String ProDescription;
+    
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+  
+   
+	public String getProName() {
+		return ProName;
+	}
+	public void setProName(String proName) {
+		ProName = proName;
+	}
+	public int getPro_id() {
+		return Pro_id;
+	}
+	public void setPro_id(int pro_id) {
+		Pro_id = pro_id;
+	}
+	public String getProDescription() {
+		return ProDescription;
+	}
+	public void setProDescription(String proDescription) {
+		ProDescription = proDescription;
+	}
+	public project setProject(project p)
+	{
+	return p;
+	}
+	@Override
+	public String toString() {
+		return "project [ProName=" + ProName + ", Pro_id=" + Pro_id + ", ProDescription="
+				+ ProDescription + "]";
+	}
+	
+	
 
-public class Project {
-	private int pro;
-	public Project(){
-		
-			List <String> listStrings= new ArrayList<String>();
-			listStrings.add("1-Java");
-			listStrings.add("2-SAP");
-			listStrings.add("3-Spring");
-			listStrings.add("4-Servlets");
-			System.out.println(listStrings);
-			}
-		
-			public int getProject(){
-				return pro;
-			}
-			public void setProject(int Project)
-			{
-				this.pro=Project;
-			}
 }
-
-

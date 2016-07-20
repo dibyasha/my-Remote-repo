@@ -1,46 +1,57 @@
 package com.flp.ems.view;
+
+import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
-public class BootClass {
-	private Scanner sc;
-	UserInteraction obj=new UserInteraction();
-	public static void main(String []args)
+import com.flp.ems.domain.Employee;
 
-	{
-		BootClass B=new BootClass();
-		B.menuSelection();
+	public class BootClass {
+	
+		
+		static UserInteraction o1=new UserInteraction();	
+		static Scanner sc=new Scanner(System.in);
+		public static void main(String args[]) throws ClassNotFoundException, SQLException
+		{   
+			int ch;
+			while(true)
+			{
+				System.out.println("Tasks");
+				System.out.println("Enter ur choice 1.Addition 2.Modification 3.Remove 4.Searching 5.GetAllEmp");
+				ch=sc.nextInt();
+				menuSelection(ch);
+			}
 	}
-	public void menuSelection(){
-
-	System.out.println("option 01 for AddEmployee");
-	System.out.println("option 02 for ModifyEmployee");
-	System.out.println("option 03 for RemoveEmployee");
-	System.out.println("option 04 for SearchEmployee");
-	System.out.println("option 05 for getAllEmployee");
-	sc = new Scanner (System.in);
-	int i=sc.nextInt();
-	switch(i)
-	{
-	case 1:
-	obj.AddEmployee();
-	this.menuSelection();
-	break;
-	case 2:
-		obj.ModifyEmplyee();
-		this.menuSelection();
-		break;
-	case 3:
-		obj.RemoveEmployee();
-		break;
-	case 4:
-		obj.SearchEmployee();
-		this.menuSelection();
-		break;
-	case 5 :
-		obj.getAllEmployee();
-		break;
+		
+	public static void menuSelection(int ch) throws ClassNotFoundException, SQLException{
+		Employee emp;
+		List<Employee> emps;
+		switch(ch)
+		{
+			case 1:
+				    emp=o1.AddEmployee();
+					if(emp != null)
+						System.out.println("Employee added is "+emp);
+					else
+						System.out.println("Failed to add the Employee");
+					break;
+			case 2:o1.ModifyEmployee();
+					break;
+			case 3:System.out.println("Employee removal  status is "+o1.RemoveEmployee());
+              		break;
+			case 4:emp=o1.SearchEmployee();
+					if(emp != null)
+						System.out.println("Employee Found "+emp);
+					else
+						System.out.println("Employee Not Found");
+					break;
+			case 5:emps=o1.getAllEmployee();
+					if(emps != null)
+						System.out.println("All Employees details are "+emps);
+					else
+						System.out.println("No Employees Found");
+					break;
+			case 6:System.exit(0);       
+		}
 	}
 }
-}
-	
-	
